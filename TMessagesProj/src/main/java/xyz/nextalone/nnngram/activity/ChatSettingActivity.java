@@ -113,6 +113,7 @@ public class ChatSettingActivity extends BaseActivity {
     private int scrollableChatPreviewRow;
     private int showTabsOnForwardRow;
     private int disableStickersAutoReorderRow;
+    private int doNotUnarchiveBySwipeRow;
     private int chat2Row;
 
     private int markdownRow;
@@ -355,6 +356,11 @@ public class ChatSettingActivity extends BaseActivity {
             if (view instanceof TextCheckCell) {
                 ((TextCheckCell) view).setChecked(ConfigManager.getBooleanOrFalse(Defines.markdownDisabled));
             }
+        } else if (position == doNotUnarchiveBySwipeRow) {
+            ConfigManager.toggleBoolean(Defines.doNotUnarchiveBySwipe);
+            if (view instanceof TextCheckCell) {
+                ((TextCheckCell) view).setChecked(ConfigManager.getBooleanOrFalse(Defines.doNotUnarchiveBySwipe));
+            }
         }
 
     }
@@ -406,7 +412,8 @@ public class ChatSettingActivity extends BaseActivity {
         scrollableChatPreviewRow = addRow("scrollableChatPreview");
         showTabsOnForwardRow = addRow("showTabsOnForward");
         disableStickersAutoReorderRow = addRow("disableStickersAutoReorder");
-        chat2Row = addRow();
+        doNotUnarchiveBySwipeRow = addRow("doNotUnarchiveBySwipe");
+            chat2Row = addRow();
         markdownRow = addRow();
         markdownDisableRow = addRow("markdownDisabled");
         markdownParserRow = addRow("markdownParser");
@@ -540,6 +547,9 @@ public class ChatSettingActivity extends BaseActivity {
                         textCell.setTextAndCheck(LocaleController.getString("MarkdownParseLinks", R.string.MarkdownParseLinks), ConfigManager.getBooleanOrDefault(Defines.markdownParseLinks, true), false);
                     } else if (position == markdownDisableRow) {
                         textCell.setTextAndCheck(LocaleController.getString("MarkdownDisableByDefault", R.string.MarkdownDisableByDefault), ConfigManager.getBooleanOrFalse(Defines.markdownDisabled), true);
+                    } else if (position == doNotUnarchiveBySwipeRow) {
+                        textCell.setTextAndCheck(LocaleController.getString("doNotUnarchiveBySwipe", R.string.doNotUnarchiveBySwipe),
+                            ConfigManager.getBooleanOrFalse(Defines.doNotUnarchiveBySwipe), true);
                     }
                     break;
                 }

@@ -201,14 +201,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import kotlin.Unit;
-import top.qwq2333.nullgram.config.ConfigManager;
-import top.qwq2333.nullgram.helpers.MonetHelper;
-import top.qwq2333.nullgram.helpers.SettingsHelper;
-import top.qwq2333.nullgram.utils.APKUtils;
-import top.qwq2333.nullgram.utils.Defines;
-import top.qwq2333.nullgram.utils.Log;
-import top.qwq2333.nullgram.utils.UpdateUtils;
-import top.qwq2333.nullgram.utils.Utils;
+import xyz.nextalone.nnngram.config.ConfigManager;
+import xyz.nextalone.nnngram.helpers.MonetHelper;
+import xyz.nextalone.nnngram.helpers.SettingsHelper;
+import xyz.nextalone.nnngram.utils.APKUtils;
+import xyz.nextalone.nnngram.utils.Defines;
+import xyz.nextalone.nnngram.utils.Log;
+import xyz.nextalone.nnngram.utils.UpdateUtils;
+import xyz.nextalone.nnngram.utils.Utils;
 
 public class LaunchActivity extends BasePermissionsActivity implements INavigationLayout.INavigationLayoutDelegate, NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate {
     public final static String EXTRA_FORCE_NOT_INTERNAL_APPS = "force_not_internal_apps";
@@ -2114,7 +2114,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                                 }
                                             } else if (path.startsWith("addstickers/")) {
                                                 sticker = path.replace("addstickers/", "");
-                                            } else if (path.startsWith("nullsetting/")) {
+                                            } else if (path.startsWith("nnnsetting/")) {
                                                 SettingsHelper.processDeepLink(data, fragment -> {
                                                     AndroidUtilities.runOnUIThread(() -> presentFragment(fragment, false, false));
                                                     if (AndroidUtilities.isTablet()) {
@@ -2543,7 +2543,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                     } else if ((url.startsWith("tg:calllog") || url.startsWith("tg://calllog"))) {
                                         showCallLog = true;
                                     } else if (url.startsWith("tg:null") || url.startsWith("tg://null")) {
-                                        url = url.replace("tg:null", "tg://t.me/nullsetting").replace("tg://null", "tg://t.me/nullsetting");
+                                        url = url.replace("tg:null", "tg://t.me/nnnsetting").replace("tg://null", "tg://t.me/nullsetting");
                                         data = Uri.parse(url);
                                         SettingsHelper.processDeepLink(data, fragment -> {
                                             AndroidUtilities.runOnUIThread(() -> presentFragment(fragment, false, false));

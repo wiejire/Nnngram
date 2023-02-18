@@ -8,7 +8,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
-    id("com.github.triplet.play") version "3.8.3"
+    id("com.github.triplet.play") version "3.8.2"
     kotlin("plugin.serialization") version Version.kotlin
 }
 
@@ -40,7 +40,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:31.5.0"))
     implementation("com.google.firebase:firebase-crashlytics-ktx")
 
-    implementation("androidx.core:core-ktx:1.10.0")
+    implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.palette:palette-ktx:1.0.0")
     implementation("androidx.exifinterface:exifinterface:1.3.6")
     implementation("androidx.dynamicanimation:dynamicanimation:1.0.0")
@@ -50,7 +50,7 @@ dependencies {
 
     compileOnly("org.checkerframework:checker-compat-qual:2.5.5")
     implementation("com.google.firebase:firebase-messaging:23.1.2")
-    implementation("com.google.firebase:firebase-config:21.3.0")
+    implementation("com.google.firebase:firebase-config:21.4.0")
     implementation("com.google.firebase:firebase-datatransport:18.1.8")
     implementation("com.google.firebase:firebase-appindexing:20.0.0")
     implementation("com.google.android.gms:play-services-auth:20.5.0")
@@ -63,7 +63,7 @@ dependencies {
     implementation("com.stripe:stripe-android:2.0.2")
     implementation("com.google.mlkit:language-id:17.0.4")
     implementation(files("libs/libgsaverification-client.aar"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("com.jakewharton:process-phoenix:2.1.2")
     // https://mvnrepository.com/artifact/de.psdev.licensesdialog/licensesdialog
@@ -77,7 +77,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:${Version.kotlin}")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
     implementation("org.osmdroid:osmdroid-android:6.1.16")
-    implementation("com.android.billingclient:billing:5.2.0")
+    implementation("com.android.billingclient:billing:6.0.0")
     implementation("com.google.guava:guava:31.1-android")
 
     implementation("io.ktor:ktor-client-core:${Version.ktor}")
@@ -97,7 +97,7 @@ dependencies {
 }
 
 android {
-    defaultConfig.applicationId = "top.qwq2333.nullgram"
+    defaultConfig.applicationId = "xyz.nextalone.nnngram"
     namespace = "org.telegram.messenger"
 
     sourceSets.getByName("main") {
@@ -193,40 +193,40 @@ android {
                 abiFilters.add("arm64-v8a")
             }
         }
-        create("arm32") {
-            dimension = "abi"
-            buildConfigField("boolean", "isPlay", "false")
-            ndk {
-                abiFilters.add("armeabi-v7a")
-            }
-        }
-        create("x86") {
-            dimension = "abi"
-            buildConfigField("boolean", "isPlay", "false")
-            ndk {
-                abiFilters.add("x86")
-            }
-        }
-        create("x86_64") {
-            dimension = "abi"
-            buildConfigField("boolean", "isPlay", "false")
-            ndk {
-                abiFilters.add("x86_64")
-            }
-        }
+//        create("arm32") {
+//            dimension = "abi"
+//            buildConfigField("boolean", "isPlay", "false")
+//            ndk {
+//                abiFilters.add("armeabi-v7a")
+//            }
+//        }
+//        create("x86") {
+//            dimension = "abi"
+//            buildConfigField("boolean", "isPlay", "false")
+//            ndk {
+//                abiFilters.add("x86")
+//            }
+//        }
+//        create("x86_64") {
+//            dimension = "abi"
+//            buildConfigField("boolean", "isPlay", "false")
+//            ndk {
+//                abiFilters.add("x86_64")
+//            }
+//        }
 
-        create("play") {
-            dimension = "abi"
-            buildConfigField("boolean", "isPlay", "true")
-            ndk {
-                abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64"))
-            }
-        }
+//        create("play") {
+//            dimension = "abi"
+//            buildConfigField("boolean", "isPlay", "true")
+//            ndk {
+//                abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64"))
+//            }
+//        }
     }
 
     applicationVariants.all {
         val outputFileName =
-            "Nullgram-${defaultConfig.versionName}-${productFlavors.first().name}.apk"
+            "Nnngram-${defaultConfig.versionName}-${productFlavors.first().name}.apk"
         outputs.all {
             val output = this as? com.android.build.gradle.internal.api.BaseVariantOutputImpl
             output?.outputFileName = outputFileName
@@ -234,7 +234,3 @@ android {
         }
     }
 }
-
-
-tasks.register<ReplaceIcon>("replaceIcon") {}
-tasks.getByName("preBuild").dependsOn(tasks.getByName("replaceIcon"))

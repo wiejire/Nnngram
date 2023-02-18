@@ -60,12 +60,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.net.ssl.SSLException;
 
-import top.qwq2333.nullgram.config.ConfigManager;
-import top.qwq2333.nullgram.helpers.WebSocketHelper;
-import top.qwq2333.nullgram.utils.DatabaseUtils;
-import top.qwq2333.nullgram.utils.Defines;
-import top.qwq2333.nullgram.utils.Log;
-import top.qwq2333.nullgram.utils.Utils;
+import xyz.nextalone.nnngram.config.ConfigManager;
+import xyz.nextalone.nnngram.helpers.WebSocketHelper;
+import xyz.nextalone.nnngram.utils.DatabaseUtils;
+import xyz.nextalone.nnngram.utils.Defines;
+import xyz.nextalone.nnngram.utils.Log;
+import xyz.nextalone.nnngram.utils.Utils;
 
 @SuppressWarnings("JavaJniMissingFunction")
 public class ConnectionsManager extends BaseController {

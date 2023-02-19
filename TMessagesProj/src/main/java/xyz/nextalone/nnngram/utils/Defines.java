@@ -96,6 +96,7 @@ public class Defines {
     // Nnngram
     public static final String doNotUnarchiveBySwipe = "doNotUnarchiveBySwipe";
     public static final String hideInputFieldBotButton = "hideInputFieldBotButton";
+    public static final String hideMessageSeenTooltip = "hideMessageSeenTooltip";
 
     // Custom API
     public static final String customAPI = "customAPI";

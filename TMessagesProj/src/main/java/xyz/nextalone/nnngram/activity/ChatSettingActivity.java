@@ -117,6 +117,7 @@ public class ChatSettingActivity extends BaseActivity {
     private int hideInputFieldBotButtonRow;
     private int hideMessageSeenTooltipRow;
     private int disableNotificationBubbleRow;
+    private int showOnlineStatusRow;
     private int chat2Row;
 
     private int markdownRow;
@@ -379,6 +380,11 @@ public class ChatSettingActivity extends BaseActivity {
             if (view instanceof TextCheckCell) {
                 ((TextCheckCell) view).setChecked(ConfigManager.getBooleanOrFalse(Defines.disableNotificationBubble));
             }
+        } else if (position == showOnlineStatusRow) {
+            ConfigManager.toggleBoolean(Defines.showOnlineStatus);
+            if (view instanceof TextCheckCell) {
+                ((TextCheckCell) view).setChecked(ConfigManager.getBooleanOrFalse(Defines.showOnlineStatus));
+            }
         }
     }
 
@@ -433,6 +439,7 @@ public class ChatSettingActivity extends BaseActivity {
         hideInputFieldBotButtonRow = addRow("hideInputFieldBotButton");
         hideMessageSeenTooltipRow = addRow("hideMessageSeenTooltip");
         disableNotificationBubbleRow = addRow("disableNotificationBubble");
+        showOnlineStatusRow = addRow("showOnlineStatus");
         chat2Row = addRow();
         markdownRow = addRow();
         markdownDisableRow = addRow("markdownDisabled");
@@ -578,6 +585,9 @@ public class ChatSettingActivity extends BaseActivity {
                     } else if (position == disableNotificationBubbleRow) {
                         textCell.setTextAndCheck(LocaleController.getString("disableNotificationBubble", R.string.disableNotificationBubble),
                             ConfigManager.getBooleanOrFalse(Defines.disableNotificationBubble), false);
+                    } else if (position == showOnlineStatusRow) {
+                        textCell.setTextAndCheck(LocaleController.getString("showOnlineStatus", R.string.showOnlineStatus),
+                            ConfigManager.getBooleanOrFalse(Defines.showOnlineStatus), true);
                     }
                     break;
                 }

@@ -118,6 +118,7 @@ public class ChatSettingActivity extends BaseActivity {
     private int hideMessageSeenTooltipRow;
     private int disableNotificationBubbleRow;
     private int showOnlineStatusRow;
+    private int disablePhotoSideActionRow;
     private int chat2Row;
 
     private int markdownRow;
@@ -385,6 +386,11 @@ public class ChatSettingActivity extends BaseActivity {
             if (view instanceof TextCheckCell) {
                 ((TextCheckCell) view).setChecked(ConfigManager.getBooleanOrFalse(Defines.showOnlineStatus));
             }
+        } else if (position == disablePhotoSideActionRow) {
+            ConfigManager.toggleBoolean(Defines.disablePhotoSideAction);
+            if (view instanceof TextCheckCell) {
+                ((TextCheckCell) view).setChecked(ConfigManager.getBooleanOrFalse(Defines.disablePhotoSideAction));
+            }
         }
     }
 
@@ -440,6 +446,7 @@ public class ChatSettingActivity extends BaseActivity {
         hideMessageSeenTooltipRow = addRow("hideMessageSeenTooltip");
         disableNotificationBubbleRow = addRow("disableNotificationBubble");
         showOnlineStatusRow = addRow("showOnlineStatus");
+        disablePhotoSideActionRow = addRow("disablePhotoSideAction");
         chat2Row = addRow();
         markdownRow = addRow();
         markdownDisableRow = addRow("markdownDisabled");
@@ -588,6 +595,9 @@ public class ChatSettingActivity extends BaseActivity {
                     } else if (position == showOnlineStatusRow) {
                         textCell.setTextAndCheck(LocaleController.getString("showOnlineStatus", R.string.showOnlineStatus),
                             ConfigManager.getBooleanOrFalse(Defines.showOnlineStatus), true);
+                    } else if (position == disablePhotoSideActionRow) {
+                        textCell.setTextAndCheck(LocaleController.getString("disablePhotoSideAction", R.string.disablePhotoSideAction),
+                            ConfigManager.getBooleanOrFalse(Defines.disablePhotoSideAction), true);
                     }
                     break;
                 }

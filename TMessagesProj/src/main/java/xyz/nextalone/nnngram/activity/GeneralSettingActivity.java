@@ -94,6 +94,7 @@ public class GeneralSettingActivity extends BaseActivity {
     private int openArchiveOnPullRow;
     private int hideAllTabRow;
     private int ignorMutedCountRow;
+    private int ignoreFolderUnreadCountRow;
 
     private int devicesRow;
     private int useSystemEmojiRow;
@@ -396,6 +397,7 @@ public class GeneralSettingActivity extends BaseActivity {
         hideAllTabRow = addRow("hideAllTab");
         ignorMutedCountRow = addRow("ignoreMutedCount");
         tabsTitleTypeRow = addRow("tabsTitleType");
+        ignoreFolderUnreadCountRow = addRow("ignoreFolderUnreadCount");
         general2Row = addRow();
 
         devicesRow = addRow();
@@ -589,6 +591,8 @@ public class GeneralSettingActivity extends BaseActivity {
                                 R.string.AutoTranslateAbout), TranslateHelper.getAutoTranslate(), true, false);
                     } else if (position == showOriginalRow) {
                         textCell.setTextAndCheck(LocaleController.getString("TranslatorShowOriginal", R.string.TranslatorShowOriginal), TranslateHelper.getShowOriginal(), true);
+                    } else if (position == ignoreFolderUnreadCountRow) {
+                        textCell.setTextAndCheck(LocaleController.getString("ignoreFolderUnreadCount", R.string.ignoreFolderUnreadCount), ConfigManager.getBooleanOrFalse(Defines.ignoreFolderUnreadCount), true);
                     }
                     break;
                 }

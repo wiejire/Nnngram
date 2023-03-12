@@ -303,5 +303,6 @@
     <string name="disablePhotoSideAction">Disable photo side action</string>
     <string name="MergeMessage">Merge message</string>
     <string name="filterZalgo">Filter \"Zalgo\" symbols</string>
+    <string name="ignoreFolderUnreadCount">Ignore folder unread count</string>
     <string name="showRPCError">Show RPC Error</string>
 </resources>

@@ -291,4 +291,5 @@
     <string name="RegistrationDateOlder">早於 %s</string>
     <string name="RegistrationDateApproximately">大概 %s</string>
     <string name="LearnMore">瞭解更多資訊</string>
+    <string name="ignoreFolderUnreadCount">忽略資料夾標籤上的未讀計數</string>
 </resources>

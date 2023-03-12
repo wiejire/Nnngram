@@ -333,6 +333,7 @@ import xyz.nextalone.nnngram.utils.Defines;
 import xyz.nextalone.nnngram.utils.Log;
 import xyz.nextalone.nnngram.utils.MessageUtils;
 import xyz.nextalone.nnngram.utils.PermissionUtils;
+import xyz.nextalone.nnngram.utils.StringUtils;
 
 @SuppressWarnings("unchecked")
 public class ChatActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate, LocationActivity.LocationActivityDelegate, ChatAttachAlertDocumentLayout.DocumentSelectActivityDelegate, ChatActivityInterface, FloatingDebugProvider, ForwardContext {
@@ -11205,7 +11206,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     name = chat.title;
                 }
                 replyIconImageView.setImageResource(R.drawable.msg_panel_reply);
-                replyNameTextView.setText(name);
+                replyNameTextView.setText(StringUtils.zalgoFilter(name));
                 replyIconImageView.setContentDescription(LocaleController.getString("AccDescrReplying", R.string.AccDescrReplying));
                 replyCloseImageView.setContentDescription(LocaleController.getString("AccDescrCancelReply", R.string.AccDescrCancelReply));
 
@@ -21670,7 +21671,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     if (user != null) {
                         nameTextView.setText(ContactsController.formatName(user.first_name, user.last_name));
                     } else if (chat != null) {
-                        nameTextView.setText(chat.title);
+                        nameTextView.setText(StringUtils.zalgoFilter(chat.title));
                     }
                 } else {
                     if (pinnedMessageObject.isInvoice() &&

@@ -12897,9 +12897,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     } else if (messageObject.customReplyName != null) {
                         name = messageObject.customReplyName;
                     } else {
-                        if (drawForwardedName) {
-                            name = messageObject.replyMessageObject.getForwardedName();
-                        }
+                        // if (drawForwardedName) {
+                        //     name = messageObject.replyMessageObject.getForwardedName();
+                        // }
 
                         if (name == null) {
                             long fromId = messageObject.replyMessageObject.getFromChatId();

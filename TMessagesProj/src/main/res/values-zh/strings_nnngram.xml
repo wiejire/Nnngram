@@ -89,6 +89,7 @@
     <string name="PrivacyNoticePhoneVisible">检测到您的手机号码对任何人都可见。 这可能会导致政府控制的黑客找到您的真实身份，请关闭它！</string>
     <string name="PrivacyNoticeAddByPhone">检测到您没有被关闭“允许通过电话号码找到我”设置， 这可能会导致政府控制的黑客找到您的真实身份，请关闭它！</string>
     <string name="hidePhone">隐藏手机号码</string>
+    <string name="hideProfilePhone">在账户界面隐藏手机号码</string>
     <string name="AppLinkNotVerifiedMessage">对于Android 12及更高版本，您需要手动添加链接到验证链接以打开Nnngram 的 t.me 链接</string>
     <string name="AppLinkNotVerifiedTitle">应用链接未验证</string>
     <string name="showExactNumber">显示精确数字</string>

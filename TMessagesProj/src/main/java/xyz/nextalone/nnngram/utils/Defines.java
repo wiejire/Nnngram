@@ -104,6 +104,7 @@ public class Defines {
     public static final String filterZalgo = "filterZalgo";
     public static final String ignoreFolderUnreadCount = "ignoreFolderUnreadCount";
     public static final String ignoreChatStrict = "ignoreChatStrict";
+    public static final String customTitle = "customTitle";
 
     // Custom API
     public static final String customAPI = "customAPI";

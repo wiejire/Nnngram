@@ -12300,9 +12300,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         } else if (currentMessageObject.scheduled && currentMessageObject.messageOwner.date == 0x7FFFFFFE) {
             timeString = "";
         } else if (edited) {
-            timeString = LocaleController.getString("EditedMessage", R.string.EditedMessage) + " " + LocaleController.getInstance().formatterDay.format((long) (messageObject.messageOwner.date) * 1000);
+            if (ConfigManager.getBooleanOrFalse(Defines.showSecondsInTimestamp)) {
+                timeString = LocaleController.getString("EditedMessage", R.string.EditedMessage) + " " + LocaleController.getInstance().formatterDayWithSeconds.format((long) (messageObject.messageOwner.date) * 1000);
+            } else {
+                timeString = LocaleController.getString("EditedMessage", R.string.EditedMessage) + " " + LocaleController.getInstance().formatterDay.format((long) (messageObject.messageOwner.date) * 1000);
+            }
         } else {
-            timeString = LocaleController.getInstance().formatterDay.format((long) (messageObject.messageOwner.date) * 1000);
+            if (ConfigManager.getBooleanOrFalse(Defines.showSecondsInTimestamp)) {
+                timeString = LocaleController.getInstance().formatterDayWithSeconds.format((long) (messageObject.messageOwner.date) * 1000);
+            } else {
+                timeString = LocaleController.getInstance().formatterDay.format((long) (messageObject.messageOwner.date) * 1000);
+            }
         }
         if (ConfigManager.getBooleanOrFalse(Defines.showMessageID) && currentMessageObject.messageOwner != null && currentMessageObject.isSent())
             timeString = timeString + " | " + messageObject.messageOwner.id;

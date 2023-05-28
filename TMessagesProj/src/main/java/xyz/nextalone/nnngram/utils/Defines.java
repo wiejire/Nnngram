@@ -105,6 +105,7 @@ public class Defines {
     public static final String ignoreFolderUnreadCount = "ignoreFolderUnreadCount";
     public static final String ignoreChatStrict = "ignoreChatStrict";
     public static final String customTitle = "customTitle";
+    public static final String showSecondsInTimestamp = "showSecondsInTimestamp";
 
     // Custom API
     public static final String customAPI = "customAPI";

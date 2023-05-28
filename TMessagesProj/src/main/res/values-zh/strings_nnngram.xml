@@ -308,4 +308,5 @@
     <string name="ignoreFolderUnreadCount">忽略文件夹标签上的未读计数</string>
     <string name="customTitle">自定义标题</string>
     <string name="setCustomTitle">设置自定义标题</string>
+    <string name="showSecondsInTimestamp">在时间戳中显示秒</string>
 </resources>
